@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
 SERVICE="cloud-run-102"
+DIRNAME=`dirname "$( realpath "$0" )"`
 
-docker build --tag "${SERVICE}" .
+docker build --tag "${SERVICE}" "${DIRNAME}"
