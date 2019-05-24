@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
+SERVICE="cloud-run-102"
+REGION="us-central1"
+
 ./build
-gcloud builds submit --tag gcr.io/salathielgenese-playground/cloud-run-102
-gcloud beta run deploy --image gcr.io/salathielgenese-playground/cloud-run-102
-gcloud beta run domain-mappings create --service cloud-run-102 --domain cloud-run-102.macrocephal.cloud
+gcloud beta run deploy --region "${REGION}" --image "gcr.io/salathielgenese-playground/${SERVICE}"
+gcloud beta run domain-mappings create --service "${SERVICE}" --domain "${SERVICE}.macrocephal.cloud"

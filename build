@@ -1,3 +1,5 @@
 #!/usr/bin/env sh
 
-docker build --tag cloud-run-102 .
+SERVICE="cloud-run-102"
+
+docker build --tag "${SERVICE}" .
