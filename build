@@ -1,6 +1,7 @@
 #!/usr/bin/env sh
 
-SERVICE="cloud-run-102"
+TAG="$( date -u +'%Y%m%dT%H%M%S' )"
 DIRNAME=`dirname "$( realpath "$0" )"`
+TAGGED_IMAGE="cloud-run-102:${TAG}"
 
-docker build --tag "${SERVICE}" "${DIRNAME}"
+docker build --tag "${TAGGED_IMAGE}" "${DIRNAME}"
