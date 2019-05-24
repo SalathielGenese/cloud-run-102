@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-SERVICE="cloud-run-102"
 REGION="us-central1"
+SERVICE="cloud-run-102"
 DOMAIN="${SERVICE}.macrocephal.cloud"
 
 ./build
