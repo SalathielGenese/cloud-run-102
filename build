@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
-TAG="$( date -u +'%Y%m%dT%H%M%S' )"
 DIRNAME=`dirname "$( realpath "$0" )"`
+TAG="$( date -u +'%Y%m%dT%H%M%S' )"
 TAGGED_IMAGE="cloud-run-102:${TAG}"
 
 docker build --tag "${TAGGED_IMAGE}" "${DIRNAME}"
