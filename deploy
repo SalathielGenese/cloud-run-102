@@ -5,4 +5,4 @@ REGION="us-central1"
 
 ./build
 gcloud beta run deploy "${SERVICE}" --region "${REGION}" --image "gcr.io/salathielgenese-playground/${SERVICE}"
-gcloud beta run domain-mappings create --service "${SERVICE}" --domain "${SERVICE}.macrocephal.cloud"
+gcloud beta run domain-mappings create --service "${SERVICE}" --region "${REGION}" --domain "${SERVICE}.macrocephal.cloud"
