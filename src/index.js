@@ -16,7 +16,7 @@ express().use( ( request, response ) =>
     };
 
     debug( NS )( body );
-    response.json( body );
+    response.send( '<pre>$0</pre>'.replace( '$0', JSON.stringify( body, void 0, 2 ) ) );
 }).listen( PORT, () =>
 {
     debug( NS )( `Started on port :${ PORT }` );
