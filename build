@@ -3,7 +3,7 @@ set -ex
 
 DIRNAME=`dirname "$( realpath "$0" )"`
 TAG="$( date -u +'%Y%m%dT%H%M%S' )"
-TAGGED_IMAGE="cloud-run-102:${TAG}"
+TAGGED_IMAGE="${1:-cloud-run-102}:${TAG}"
 
 docker build --tag "${TAGGED_IMAGE}" "${DIRNAME}"
 echo "${TAG}" > "${DIRNAME}/tag"
