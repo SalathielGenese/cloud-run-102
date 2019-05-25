@@ -3,12 +3,12 @@ set -ex
 
 REGION="${2:-us-central1}"
 SERVICE="${1:-cloud-run-102}"
-TAG="$( awk 'NR==1{print}' ./tag )"
 DOMAIN="${SERVICE}.macrocephal.cloud"
 PROJECT="${3:-salathielgenese-playground}"
 
 # Build image
 ./build "${SERVICE}"
+TAG="$( awk 'NR==1{print}' ./tag )"
 # Push image
 gcloud builds submit \
     --tag "gcr.io/${PROJECT}/${SERVICE}:${TAG}"
