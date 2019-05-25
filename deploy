@@ -9,14 +9,15 @@ DOMAIN="${SERVICE}.macrocephal.cloud"
 # Build image
 ./build "${SERVICE}"
 TAG="$( awk 'NR==1{print}' ./tag )"
+IMAGE="gcr.io/${PROJECT}/${SERVICE}:${TAG}"
 # Push image
-gcloud builds submit \
-    --tag "gcr.io/${PROJECT}/${SERVICE}:${TAG}"
+docker tag "${SERVICE}:${TAG}" "${IMAGE}"
+docker push "${IMAGE}"
 # Deploy image
 gcloud beta run deploy \
     "${SERVICE}" \
     --region "${REGION}" \
-    --image "gcr.io/${PROJECT}/${SERVICE}:${TAG}"
+    --image "${IMAGE}"
 # Serve image
 gcloud beta run domain-mappings describe \
     --region "${REGION}" \
