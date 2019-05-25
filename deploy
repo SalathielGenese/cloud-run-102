@@ -2,7 +2,7 @@
 set -ex
 
 REGION="us-central1"
-SERVICE="cloud-run-102"
+SERVICE="${1:-cloud-run-102}"
 DOMAIN="${SERVICE}.macrocephal.cloud"
 
 ./build "${SERVICE}"
