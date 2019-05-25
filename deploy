@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -ex
 
-REGION="us-central1"
+REGION="${2:-us-central1}"
 SERVICE="${1:-cloud-run-102}"
 DOMAIN="${SERVICE}.macrocephal.cloud"
 PROJECT="${3:-salathielgenese-playground}"
