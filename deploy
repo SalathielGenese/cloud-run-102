@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -ex
 
 REGION="us-central1"
 SERVICE="cloud-run-102"
