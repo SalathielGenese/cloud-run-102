@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
 set -ex
 
-REGION="${2:-us-central1}"
-SERVICE="${1:-cloud-run-102}"
+REGION="us-central1"
+SERVICE="cloud-run-102"
 DOMAIN="${SERVICE}.macrocephal.cloud"
-PROJECT="${3:-salathielgenese-playground}"
+PROJECT="salathielgenese-playground"
 
 # Build image
 ./build "${SERVICE}"
