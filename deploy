@@ -1,6 +1,11 @@
 #!/usr/bin/env sh
 set -ex
 
+#
+# TODO: - Handle ./deploy staging
+# TODO: - Handle ./deploy production
+#
+
 REGION="us-central1"
 SERVICE="cloud-run-102"
 PROJECT="salathielgenese-playground"
