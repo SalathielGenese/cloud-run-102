@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
+set -ex
 
 DIRNAME=`dirname "$( realpath "$0" )"`
 TAG="$( date -u +'%Y%m%dT%H%M%S' )"
