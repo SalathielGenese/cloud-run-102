@@ -3,8 +3,8 @@ set -ex
 
 REGION="us-central1"
 SERVICE="cloud-run-102"
-DOMAIN="${SERVICE}.macrocephal.cloud"
 PROJECT="salathielgenese-playground"
+DOMAIN="${SERVICE}.macrocephal.cloud"
 
 # Build image
 ./build "${SERVICE}"
