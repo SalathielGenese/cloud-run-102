@@ -4,9 +4,10 @@ set -ex
 REGION="us-central1"
 SERVICE="${1:-cloud-run-102}"
 DOMAIN="${SERVICE}.macrocephal.cloud"
+PROJECT="${3:-salathielgenese-playground}"
 
 ./build "${SERVICE}"
-gcloud beta run deploy "${SERVICE}" --region "${REGION}" --image "gcr.io/salathielgenese-playground/${SERVICE}"
+gcloud beta run deploy "${SERVICE}" --region "${REGION}" --image "gcr.io/${PROJECT}/${SERVICE}"
 
 gcloud beta run domain-mappings describe --region "${REGION}" --domain cloud-run-102.macrocephal.cloud ||
     gcloud beta run domain-mappings create --service "${SERVICE}" --region "${REGION}" --domain "${DOMAIN}"
