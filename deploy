@@ -16,7 +16,7 @@ gcloud builds submit \
 gcloud beta run deploy \
     "${SERVICE}" \
     --region "${REGION}" \
-    --image "gcr.io/${PROJECT}/${SERVICE}"
+    --image "gcr.io/${PROJECT}/${SERVICE}:${TAG}"
 # Serve image
 gcloud beta run domain-mappings describe \
     --region "${REGION}" \
