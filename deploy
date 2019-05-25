@@ -5,7 +5,7 @@ REGION="us-central1"
 SERVICE="cloud-run-102"
 DOMAIN="${SERVICE}.macrocephal.cloud"
 
-./build
+./build "${SERVICE}"
 gcloud beta run deploy "${SERVICE}" --region "${REGION}" --image "gcr.io/salathielgenese-playground/${SERVICE}"
 
 gcloud beta run domain-mappings describe --region "${REGION}" --domain cloud-run-102.macrocephal.cloud ||
