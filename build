@@ -7,4 +7,3 @@ TAGGED_IMAGE="${1:-cloud-run-102}:${TAG}"
 
 docker build --tag "${TAGGED_IMAGE}" "${DIRNAME}"
 echo "${TAG}" > "${DIRNAME}/tag"
-echo "${TAGGED_IMAGE}"
